@@ -1,0 +1,15 @@
+{% extends 'classroom/layouts/base.html' %}
+
+{% block content %}
+
+  <h1>All Courses</h1>
+
+  <div class="row">
+    {% for course in courses %}
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        {% include 'classroom/components/course_card.html' %}
+      </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

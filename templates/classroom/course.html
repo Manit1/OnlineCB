@@ -1,0 +1,20 @@
+{% extends 'classroom/layouts/base.html' %}
+{% block content %}
+
+ <h1>{{course.name}}</h1>
+ <h3>Instructor: {{course.instructors.name}}</h3>
+ <h4>Price: Rs {{course.price}}</h4>
+ <p>
+     {{course.description}}
+ </p>
+
+ <h2>Contents</h2>
+
+ <ul>
+     {% for content in course.contents.all %}
+     <a href="{% url 'get_content' course.id content.id %}">
+     <li>{{content.name}}</li>
+     </a>
+     {% endfor %}
+ </ul>
+ {% endblock %}
